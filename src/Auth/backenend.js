@@ -1,0 +1,1 @@
+export const API=process.env.React_App_BACKEND;
