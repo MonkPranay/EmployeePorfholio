@@ -5,24 +5,24 @@ export default function AddMember() {
   return (
     <div>
       <section>
-        <div class="container-fluid">
-          <div class="row align-items-center pl-4 pr-4">
-            <div class="col-lg-12 ">
-              <div class="page-breadcrumb pt-3 pl-2">
+        <div className="container-fluid">
+          <div className="row align-items-center pl-4 pr-4">
+            <div className="col-lg-12 ">
+              <div className="page-breadcrumb pt-3 pl-2">
                 <nav aria-label="container breadcrumb ">
-                  <ol class="breadcrumb bg-transparent">
-                    <li class="breadcrumb-item">
-                      <Link to="#" class="breadcrumb-link">
+                  <ol className="breadcrumb bg-transparent">
+                    <li className="breadcrumb-item">
+                      <Link to="#" className="breadcrumb-link">
                         Home
                       </Link>
                     </li>
-                    <li class="breadcrumb-item" aria-current="page">
-                      <Link to="#" class="breadcrumb-link">
+                    <li className="breadcrumb-item" aria-current="page">
+                      <Link to="#" className="breadcrumb-link">
                         Website
                       </Link>
                     </li>
-                    <li class="breadcrumb-item active" aria-current="page">
-                      <Link to="#" class="breadcrumb-link">
+                    <li className="breadcrumb-item active" aria-current="page">
+                      <Link to="#" className="breadcrumb-link">
                         New Team
                       </Link>
                     </li>
@@ -35,11 +35,11 @@ export default function AddMember() {
       </section>
 
       <section>
-        <div class="container-fluid">
-          <div class="row align-items-center pl-4 pr-4">
-            <div class="col-lg-12">
-              <h3 class="page-header">
-                <i class="fa fa-user-o pr-3 active"></i>New Team
+        <div className="container-fluid">
+          <div className="row align-items-center pl-4 pr-4">
+            <div className="col-lg-12">
+              <h3 className="page-header">
+                <i className="fa fa-user-o pr-3 active"></i>New Team
               </h3>
             </div>
           </div>
@@ -47,51 +47,51 @@ export default function AddMember() {
       </section>
 
       <section>
-        <div class="container-fluid">
-          <div class="row align-items-center pl-4 pr-4">
-            <div class="col-lg-12">
+        <div className="container-fluid">
+          <div className="row align-items-center pl-4 pr-4">
+            <div className="col-lg-12">
               <form role="form">
-                <div class="row pl-3 pr-3">
-                  <div class="col-md-6">
-                    <div class="form-group">
+                <div className="row pl-3 pr-3">
+                  <div className="col-md-6">
+                    <div className="form-group">
                       <label>Team Name</label>
-                      <input class="form-control" placeholder="Enter Team Name" />
+                      <input className="form-control" placeholder="Enter Team Name" />
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
+                  <div className="col-md-6">
+                    <div className="form-group">
                       <label>Primary Email</label>
-                      <input class="form-control" placeholder="Enter your Email " />
+                      <input className="form-control" placeholder="Enter your Email " />
                     </div>
                   </div>
                 </div>
 
-                <div class="row pl-3 pr-3">
-                  <div class="col-md-6">
-                    <div class="form-group">
+                <div className="row pl-3 pr-3">
+                  <div className="col-md-6">
+                    <div className="form-group">
                       <label>Company Name</label>
-                      <input class="form-control" placeholder="Enter Company Name" />
+                      <input className="form-control" placeholder="Enter Company Name" />
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
+                  <div className="col-md-6">
+                    <div className="form-group">
                       <label>Country</label>
-                      <input class="form-control" placeholder="Enter Country Name" />
+                      <input className="form-control" placeholder="Enter Country Name" />
                     </div>
                   </div>
                 </div>
 
-                <div class="row pl-3 pr-3">
-                  <div class="col-md-6">
-                    <div class="form-group">
+                <div className="row pl-3 pr-3">
+                  <div className="col-md-6">
+                    <div className="form-group">
                       <label>Password</label>
-                      <input class="form-control" placeholder="Enter Password" />
+                      <input className="form-control" placeholder="Enter Password" />
                     </div>
                   </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
+                  <div className="col-md-6">
+                    <div className="form-group">
                       <label>Repeat Password</label>
-                      <input class="form-control" placeholder="Re-Enter Password" />
+                      <input className="form-control" placeholder="Re-Enter Password" />
                     </div>
                   </div>
                 </div>

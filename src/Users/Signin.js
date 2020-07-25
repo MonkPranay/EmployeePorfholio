@@ -8,8 +8,8 @@ const Signin = () => {
   let history = useHistory();
 
   const [values, setValues] = useState({
-    email: "",
-    password: "",
+    email: "eve.holt@reqres.in",
+    password: "pistol",
     error: "",
     success: false,
   });

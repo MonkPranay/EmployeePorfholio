@@ -3,18 +3,18 @@ import { Link, useHistory } from "react-router-dom";
 
 const Header=()=> {
   return (
-    <header class="header_area">
-      <div class="sub_header">
-        <div class="container-fluid">
-          <div class="row align-items-center">
-            <div class="col-md-4 col-xl-6">
-              <div class="main_menu">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <nav class="navbar navbar-expand-lg navbar-light">
+    <header className="header_area">
+      <div className="sub_header">
+        <div className="container-fluid">
+          <div className="row align-items-center">
+            <div className="col-md-4 col-xl-6">
+              <div className="main_menu">
+                <div className="container">
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <nav className="navbar navbar-expand-lg navbar-light">
                         <button
-                          class="navbar-toggler"
+                          className="navbar-toggler"
                           type="button"
                           data-toggle="collapse"
                           data-target="#navbarSupportedContent"
@@ -22,31 +22,31 @@ const Header=()=> {
                           aria-expanded="false"
                           aria-label="Toggle navigation"
                         >
-                          <span class="navbar-toggler-icon"></span>
+                          <span className="navbar-toggler-icon"></span>
                         </button>
                         <div
-                          class="collapse navbar-collapse"
+                          className="collapse navbar-collapse"
                           id="navbarSupportedContent"
                         >
-                          <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                              <Link class="nav-link" to="index.html">
-                                <i class="fa fa-dashboard"></i>Dashboard
+                          <ul className="navbar-nav mr-auto">
+                            <li className="nav-item">
+                              <Link className="nav-link" to="index.html">
+                                <i className="fa fa-dashboard"></i>Dashboard
                               </Link>
                             </li>
-                            <li class="nav-item">
-                              <Link to="about.html" class="nav-link active">
-                                <i class="fa fa-television"></i>Website
+                            <li className="nav-item">
+                              <Link to="about.html" className="nav-link active">
+                                <i className="fa fa-television"></i>Website
                               </Link>
                             </li>
-                            <li class="nav-item">
-                              <Link to="team.html" class="nav-link">
-                                <i class="fa fa-pencil"></i>Template
+                            <li className="nav-item">
+                              <Link to="team.html" className="nav-link">
+                                <i className="fa fa-pencil"></i>Template
                               </Link>
                             </li>
-                            <li class="nav-item d-block">
-                              <Link to="gallery.html" class="nav-link">
-                                <i class="fa fa-question"></i>Help
+                            <li className="nav-item d-block">
+                              <Link to="gallery.html" className="nav-link">
+                                <i className="fa fa-question"></i>Help
                               </Link>
                             </li>
                           </ul>
@@ -57,10 +57,10 @@ const Header=()=> {
                 </div>
               </div>
             </div>
-            <div class="col-md-8 col-xl-6">
-              <div class="sub_header_user_profile_image float-right  p-2">
-                <Link to="#" class="register_icon">
-                  Syndrela T. <i class="fa fa-caret-down p-1"></i>
+            <div className="col-md-8 col-xl-6">
+              <div className="sub_header_user_profile_image float-right  p-2">
+                <Link to="#" className="register_icon">
+                  Syndrela T. <i className="fa fa-caret-down p-1"></i>
                 </Link>
               </div>
             </div>
