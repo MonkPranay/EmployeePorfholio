@@ -12,7 +12,7 @@ export default function Footer() {
               <div className="text-center p-3">
                 Have question?
                 <Link to="#" className="text-primary">
-                  Contact us
+                   Contact us
                 </Link>
               </div>
             </div>

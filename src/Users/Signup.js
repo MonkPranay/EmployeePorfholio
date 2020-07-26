@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import toastr from 'reactjs-toastr';
-import { Link } from "react-router-dom";
 import { signup } from "../Auth";
+import { Link} from "react-router-dom";
 import joinusImg from "../Base/images/user.webp";
 import "../Base/css/main.css";
 
@@ -9,8 +8,8 @@ const Signup = () => {
   const [values, setValues] = useState({
     email: "",
     password: "",
-    error: "",
     success: false,
+    error:""
   });
 
   // Destructuring from values from state
@@ -25,7 +24,10 @@ const Signup = () => {
     setValues({ ...values, error: false });
     signup({ email, password })
       .then((data) => {
-        if (data) {
+        if (data.error) {
+          setValues({ ...values, error: data.error, success: false });
+        
+        } else {
           setValues({
             ...values,
             name: "",
@@ -34,12 +36,28 @@ const Signup = () => {
             error: "",
             success: true,
           });
-        } else {
-          setValues({ ...values, error: false, success: false });
         }
       })
       .catch(console.log("Error is signup"));
   };
+  
+  const successMessage = () => (    
+    <div
+      className="alert alert-success successMessage"
+      style={{ display: success ? " " : "none" }}
+    >
+      Registration Successfull <Link to="/">Click here to Login</Link>
+    </div>
+  );
+  const errorMessage = () => (
+    
+    <div
+      className="alert alert-danger successMessage"
+      style={{ display: error ? " " : "none" }}
+    >
+      {error}
+    </div>
+  );
 
   const signupForm = () => {
     return (
@@ -100,6 +118,7 @@ const Signup = () => {
                 </div>
               </form>
               {successMessage()}
+              {errorMessage()}
             </div>
             
           </div>
@@ -107,16 +126,6 @@ const Signup = () => {
       </div>
     );
   };
-
-  const successMessage = () => (    
-    <div
-      className="alert alert-success successMessage"
-      style={{ display: success ? " " : "none" }}
-    >
-     <p onClick={()=>toastr.success('Success Message', 'Title', {displayDuration:3000})}>Show Success Message</p>
-      <Link to="/">Login here</Link>
-    </div>
-  );
 
   return (
     <div>

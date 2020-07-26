@@ -1,5 +1,5 @@
-import React, { useState} from "react";
-import {signin } from "../Auth";
+import React, { useState } from "react";
+import { signin, authenticate } from "../Auth";
 import { Link, useHistory } from "react-router-dom";
 import userImg from "../Base/images/user.webp";
 import "../Base/css/main.css";
@@ -8,13 +8,12 @@ const Signin = () => {
   let history = useHistory();
 
   const [values, setValues] = useState({
-    email: "eve.holt@reqres.in",
-    password: "pistol",
+    email: "",
+    password: "",
     error: "",
-    success: false,
   });
 
-  const { email, password, error, success } = values;
+  const { email, password, error} = values;
 
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
@@ -24,24 +23,26 @@ const Signin = () => {
     event.preventDefault();
     setValues({ ...values, error: false });
     signin({ email, password }).then((data) => {
-      console.log("Data Here ", data);
+     
       if (data.error) {
-        setValues({ ...values, error: data.error, success: false });
+        setValues({ ...values, error: data.error});
       } else {
-       return history.push("/dashbord");
-        setValues({
-          ...values,
-          name: "",
-          email: "",
-          password: "",
-          error: "",
-          success: true,
+        authenticate(data, () => {
+          setValues({
+            ...values,
+            name: "",
+            email: "",
+            password: "",
+            error: "",
+            
+          });
         });
-        history.push("/dashboard");
+        return history.push("/dashbord");
       }
     });
   };
   const errorMessage = () => (
+    
     <div
       className="alert alert-danger successMessage"
       style={{ display: error ? " " : "none" }}
@@ -115,26 +116,3 @@ const Signin = () => {
 };
 
 export default Signin;
-
-// return (
-//   <div>
-//     <form>
-//       <input
-//         type="text"
-//         required
-//         value={email}
-//         onChange={handleChange("email")}
-//       />
-
-//       <input
-//         type="text"
-//         required
-//         value={password}
-//         onChange={handleChange("password")}
-//       />
-
-//       <button onClick={handelSubmit}>Signin</button>
-//       <p className="text-center">{JSON.stringify(values)}</p>
-//     </form>
-//   </div>
-// );

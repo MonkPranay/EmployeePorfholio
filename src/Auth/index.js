@@ -31,3 +31,21 @@ export const signin = user => {
       .catch(err => console.log(err));
   };
 
+  export const authenticate = (data, next) => {
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("jwt", JSON.stringify(data));
+      next();
+    }
+  };
+
+  export const isAutheticated = () => {
+    if (typeof window == "undefined") {
+      return false;
+    }
+    if (sessionStorage.getItem("jwt")) {
+      return JSON.parse(sessionStorage.getItem("jwt"));
+    } else {
+      return false;
+    }
+  };
+  
